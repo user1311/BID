@@ -1,11 +1,12 @@
 ::::::::::::::::::::::BID v1.0::::::::::::::::::::::::::::::
 
-This is simple python3 script which uses subprocess to call functions that will help you to DOS wireless networks... 
+This is simple python3 script which uses subprocess to call functions that will help you to perform DOS attack on wireless networks... 
 
 To make this work, you will need to have python installed and you'll need to work on linux
 
 
 Tools that you will need to have installed:
+	
 	-airmon-ng
 	-airodump-ng
 	-aireplay-ng
@@ -16,6 +17,7 @@ Tools that you will need to have installed:
 	-Download
 	-Find your targets Access point MAC address and channel
 	-Type in next command line;
+	
 		example: python3 BID.py --mac 00:00:00:a1:2b:cc --channel 8 -i wlan0   
 		example: python3 BID.py --m 00:00:00:a1:2b:cc --c 10 -i wlan1   
 
