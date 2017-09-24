@@ -19,6 +19,7 @@ Tools that you will need to have installed:
 	-Find your targets Access point MAC address and channel
 
 	[*] You can perform scan by typing;
+
 		example: python3 BID.py --interface wlan0 --scan
 		example: python3 BID.py - wlan0 --s
 
@@ -39,16 +40,6 @@ Tools that you will need to have installed:
 	perform airmon-ng check kill, to kill processes that could disrupt,
 	start the attack with flooding Access point with deauth packets.
 	
-3. Turning off monitor mode
-	#check the name of your interface by typing ifconfig
-	
-	I'll add it soon but for now type:
-		
-		ifconfig wlan0 down
-		iwconfig wlan0 mode managed
-		ifconfig wlan0 up
-		
-		su service networking restart
-		su service network-manager start
+3. Have fun!
 
-
+	P.S It's illegal and i am not responsible for your actions.
