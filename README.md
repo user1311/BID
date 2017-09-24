@@ -16,6 +16,10 @@ Tools that you will need to have installed:
 
 	-Download
 	-Find your targets Access point MAC address and channel
+	[*] You can perform scan by typing;
+		example: python3 BID.py --interface wlan0 --scan
+		example: python3 BID.py - wlan0 --s
+
 	-Type in next command line;
 	
 		example: python3 BID.py --mac 00:00:00:a1:2b:cc --channel 8 -i wlan0   
