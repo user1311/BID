@@ -43,3 +43,6 @@ Tools that you will need to have installed:
 3. Have fun!
 
 	P.S It's illegal and i am not responsible for your actions.
+
+
+::::::::::::::::::::::::::NO SYSTEM IS SAFE::::::::::::::::::::::::::::::::::::::
